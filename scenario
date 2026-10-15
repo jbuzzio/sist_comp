@@ -1,0 +1,10 @@
+mkdir -p ~/servidor/logs ~/servidor/bin ~/datos
+cd ~/servidor/logs
+cat > acceso.log <<'EOF'
+2026-05-21 08:01:11 INFO  user=ana    accion=login   ip=10.0.0.5
+2026-05-21 08:05:19 ERROR user=ana    accion=upload  ip=10.0.0.5 msg=timeout
+2026-05-21 08:12:31 ERROR user=mara   accion=upload  ip=10.0.0.9 msg=denied
+2026-05-21 08:19:07 ERROR user=luis   accion=delete  ip=10.0.0.8 msg=denied
+EOF
+cd ~/datos
+printf 'id,nombre,depto,salario\n1,Ana,IT,3200\n2,Luis,Ventas,2800\n' > empleados.csv
